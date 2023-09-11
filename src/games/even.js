@@ -1,4 +1,4 @@
-import { getRandom, basicOfGames } from '../presets.js';
+import { getRandom, basicOfGames } from '../index.js';
 
 const evenGame = () => {
   const purposeOfEvenGame = 'Answer "yes" if the number is even, otherwise answer "no".';
