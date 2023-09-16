@@ -1,6 +1,6 @@
 import { getRandom, basicOfGames, getRandomindex } from '../index.js';
 
-export const progressionGame = () => {
+const progressionGame = () => {
   const purposeOfREGGame = 'What number is missing in the progression?';
   const taskForREGGame = () => {
     // задаем размер массива
@@ -11,7 +11,7 @@ export const progressionGame = () => {
     const firstNumber = getRandom(14);
     const increase = getRandom(10);
     // формируем массив размером от 5, до 10
-    for (let index = 0; index < arrayLength; index++) {
+    for (let index = 0; index < arrayLength; index += 1) {
       // пушим в массив числа, начиная с firstNumber и увеличивая
       // следующее число на insrease
       for (let num = firstNumber; array.length < arrayLength; num += increase) {
@@ -28,3 +28,4 @@ export const progressionGame = () => {
   };
   basicOfGames(purposeOfREGGame, taskForREGGame);
 };
+export default progressionGame;
