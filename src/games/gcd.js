@@ -5,16 +5,9 @@ export const gcdGame = () => {
     const taskForGCDGame = () => {
         const randomNumber1 = getRandom(90);
         const randomNumber2 = getRandom(90);
-        const answer1 = [];
-        const answer2 = [];
         const dividers = [];
         const finalDividers = [];
-        const question = `${randomNumber1} ${randomNumber2}`;
-        let result1 = 0;
-        let result2 = 0;
-        const minNumber = Math.min(randomNumber1, randomNumber2);
-        const arrayDiv = [];
-        
+        const question = `${randomNumber1} ${randomNumber2}`;        
         // взять числа от 1 до минимального
         for (let index = 1; index <= randomNumber1; index++) {
             // берем только те числа, которые дают нам остаток 0
