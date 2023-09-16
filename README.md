@@ -12,8 +12,7 @@
 [![asciicast](https://asciinema.org/a/S8Dh46lI9Mlk2qiCrHwnBIyOP.svg)](https://asciinema.org/a/S8Dh46lI9Mlk2qiCrHwnBIyOP)
 
 ## Brain-progression
-[![asciicast](https://asciinema.org/a/bITq4XuxeCTLAfLJGfh5NNhLD
-.svg)](https://asciinema.org/a/bITq4XuxeCTLAfLJGfh5NNhLD)
+[![asciicast](https://asciinema.org/a/bITq4XuxeCTLAfLJGfh5NNhLD.svg)](https://asciinema.org/a/bITq4XuxeCTLAfLJGfh5NNhLD)
 
 ## Brain-prime
 [![asciicast](https://asciinema.org/a/LwVLDzuAr3aiRGcUp7xZQieis.svg)](https://asciinema.org/a/LwVLDzuAr3aiRGcUp7xZQieis)
