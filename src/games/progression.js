@@ -26,7 +26,7 @@ export const progressionGame = () => {
 
 
 
-    return [question, array[removeIndex].toString()];
-    }
+        return [question, array[removeIndex].toString()];
+    };
 basicOfGames(purposeOfREGGame, taskForREGGame);
 };
