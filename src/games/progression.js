@@ -22,7 +22,7 @@ export const progressionGame = () => {
         const removeIndex = getRandomindex(0, array.length);
         const finalArr = [...array];
         finalArr.splice(removeIndex, 1, '..');
-        const question = finalArr;
+        const question = finalArr.join(' ');
 
 
 
