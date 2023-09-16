@@ -19,7 +19,7 @@ export const progressionGame = () => {
             }
         };
         // теперь берем массив и заменяем рандомное число в нем на '..'
-        const removeIndex = getRandomindex(0, array.length);
+        const removeIndex = getRandomindex(0, array.length - 1);
         const finalArr = [...array];
         finalArr.splice(removeIndex, 1, '..');
         const question = finalArr.join(' ');
