@@ -21,7 +21,7 @@ const getCalcGame = () => {
     const randomSign = signs[getRandom(0, 2)];
     const question = `${randomNumber1} ${randomSign} ${randomNumber2}`;
     return [question, initCalc(randomNumber1, randomNumber2, randomSign, signs)];
-  }
+  };
   genBasicOfGames(purposeOfCalcGame, taskForCalcGame);
 };
 export default getCalcGame;
