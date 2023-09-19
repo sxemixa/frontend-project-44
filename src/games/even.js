@@ -1,10 +1,10 @@
-import { getRandom, basicOfGames } from '../index.js';
+import { getRandom, genBasicOfGames } from '../index.js';
 
-const evenGame = () => {
+const getEvenGame = () => {
   const purposeOfEvenGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
   const taskForEvenGame = () => {
-    const randomNumber = getRandom(90);
+    const randomNumber = getRandom();
 
     const isEven = (num) => num % 2 === 0;
 
@@ -13,6 +13,6 @@ const evenGame = () => {
 
     return [question, result];
   };
-  basicOfGames(purposeOfEvenGame, taskForEvenGame);
+  genBasicOfGames(purposeOfEvenGame, taskForEvenGame);
 };
-export default evenGame;
+export default getEvenGame;

@@ -1,11 +1,11 @@
-import { getRandom, basicOfGames } from '../index.js';
+import { getRandom, genBasicOfGames } from '../index.js';
 
-const primeGame = () => {
+const getPrimeGame = () => {
   const purposeOfPrimeGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   const taskForPrimeGame = () => {
     // простое число это число которое делится только на 1 и само себя
     // создаем рандомное число
-    const randomNumber = getRandom(100);
+    const randomNumber = getRandom();
     // сделаем счетчик чисел, при котором будет всего 2 варинта
     // получения 0 при делении без остатка
     let divider = 1;
@@ -23,6 +23,6 @@ const primeGame = () => {
     }
     return [question, result];
   };
-  basicOfGames(purposeOfPrimeGame, taskForPrimeGame);
+  genBasicOfGames(purposeOfPrimeGame, taskForPrimeGame);
 };
-export default primeGame;
+export default getPrimeGame;

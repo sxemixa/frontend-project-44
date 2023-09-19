@@ -1,16 +1,16 @@
 import readlineSync from 'readline-sync';
 
-export const getRandom = (max) => Math.round(Math.random() * max);
+export const getRandom = (min = 0, max = 100) => Math.round(Math.random() * (max - min) + min);
 
-export const getRandomindex = (min, max) => Math.round(Math.random() * (max - min) + min);
-
-export const basicOfGames = (purposeOfGame, task) => {
+export const genBasicOfGames = (purposeOfGame, task) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   console.log(purposeOfGame);
+  // задаем число итераций повторения запуска кода
+  const iterations = 3;
 
-  for (let i = 0; i < 3; i += 1) {
+  for (let i = 0; i < iterations; i += 1) {
     const questionAndResult = task();
 
     console.log(`Question: ${questionAndResult[0]}`);

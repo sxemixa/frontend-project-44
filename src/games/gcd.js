@@ -1,10 +1,10 @@
-import { getRandom, basicOfGames } from '../index.js';
+import { getRandom, genBasicOfGames } from '../index.js';
 
-const gcdGame = () => {
+const getGcdGame = () => {
   const purposeOfGCDGame = 'Find the greatest common divisor of given numbers.';
   const taskForGCDGame = () => {
-    const randomNumber1 = getRandom(90);
-    const randomNumber2 = getRandom(90);
+    const randomNumber1 = getRandom();
+    const randomNumber2 = getRandom();
     const dividers = [];
     const finalDividers = [];
     const question = `${randomNumber1} ${randomNumber2}`;
@@ -25,6 +25,6 @@ const gcdGame = () => {
     }
     return [question, Math.max(...finalDividers).toString()];
   };
-  basicOfGames(purposeOfGCDGame, taskForGCDGame);
+  genBasicOfGames(purposeOfGCDGame, taskForGCDGame);
 };
-export default gcdGame;
+export default getGcdGame;
