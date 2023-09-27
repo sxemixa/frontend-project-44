@@ -1,17 +1,14 @@
-import { getRandom, genBasicOfGames } from '../index.js';
+import { launchBasicOfGames } from '../index.js';
+import { getRandom } from '../utils.js';
 
 const getGcdGame = () => {
   const purposeOfGCDGame = 'Find the greatest common divisor of given numbers.';
-  const taskForGCDGame = () => {
-    const randomNumber1 = getRandom();
-    const randomNumber2 = getRandom();
+  const countGCD = (number1, number2) => {
     const dividers = [];
     const finalDividers = [];
-    const question = `${randomNumber1} ${randomNumber2}`;
-    // взять числа от 1 до минимального
-    for (let index = 1; index <= randomNumber1; index += 1) {
+    for (let index = 1; index <= number1; index += 1) {
       // берем только те числа, которые дают нам остаток 0
-      if (randomNumber1 % index === 0) {
+      if (number1 % index === 0) {
         // эти числа добавляем в массив
         dividers.push(index);
       }
@@ -19,12 +16,19 @@ const getGcdGame = () => {
     for (let index = 0; index < dividers.length; index += 1) {
       const element = dividers[index];
 
-      if (randomNumber2 % element === 0) {
+      if (number2 % element === 0) {
         finalDividers.push(element);
       }
     }
-    return [question, Math.max(...finalDividers).toString()];
+    return Math.max(...finalDividers);
   };
-  genBasicOfGames(purposeOfGCDGame, taskForGCDGame);
+
+  const generateQuestionAndAnswerForGCDGame = () => {
+    const randomNumber1 = getRandom();
+    const randomNumber2 = getRandom();
+    const question = `${randomNumber1} ${randomNumber2}`;
+    return [question, (countGCD(randomNumber1, randomNumber2)).toString()];
+  };
+  launchBasicOfGames(purposeOfGCDGame, generateQuestionAndAnswerForGCDGame);
 };
 export default getGcdGame;

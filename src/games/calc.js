@@ -1,27 +1,36 @@
-import { getRandom, genBasicOfGames } from '../index.js';
+import { launchBasicOfGames } from '../index.js';
+import { getRandom } from '../utils.js';
 
-const initCalc = (randomNumber1, randomNumber2, randomSign, signs) => {
+const calculate = (Number1, Number2, sign) => {
   let result = 0;
-  if (randomSign === signs[0]) {
-    result = randomNumber1 + randomNumber2;
-  } else if (randomSign === signs[1]) {
-    result = randomNumber1 - randomNumber2;
-  } else {
-    result = randomNumber1 * randomNumber2;
+  switch (sign) {
+    case '+':
+      result = Number1 + Number2;
+      break;
+    case '-':
+      result = Number1 - Number2;
+      break;
+    case '*':
+      result = Number1 * Number2;
+      break;
+    case '/':
+      result = Number1 / Number2;
+      break;
+    default:
+      break;
   }
-  result = result.toString();
   return result;
 };
 const purposeOfCalcGame = 'What is the result of the expression?';
 const getCalcGame = () => {
-  const taskForCalcGame = () => {
+  const generateQuestionAndAnswerForCalcGame = () => {
     const randomNumber1 = getRandom();
     const randomNumber2 = getRandom();
     const signs = ['+', '-', '*'];
     const randomSign = signs[getRandom(0, 2)];
     const question = `${randomNumber1} ${randomSign} ${randomNumber2}`;
-    return [question, initCalc(randomNumber1, randomNumber2, randomSign, signs)];
+    return [question, (calculate(randomNumber1, randomNumber2, randomSign).toString())];
   };
-  genBasicOfGames(purposeOfCalcGame, taskForCalcGame);
+  launchBasicOfGames(purposeOfCalcGame, generateQuestionAndAnswerForCalcGame);
 };
 export default getCalcGame;

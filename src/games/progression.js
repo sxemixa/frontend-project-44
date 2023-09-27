@@ -1,9 +1,9 @@
-import { getRandom, genBasicOfGames } from '../index.js';
+import { launchBasicOfGames } from '../index.js';
+import { getRandom } from '../utils.js';
 
 const getProgressionGame = () => {
   const purposeOfREGGame = 'What number is missing in the progression?';
-  const taskForREGGame = () => {
-    // задаем размер массива
+  const createProgression = () => {
     const arrayLength = getRandom(5, 10);
     const array = [];
     // создаем стартовую точку и число на которое
@@ -18,14 +18,19 @@ const getProgressionGame = () => {
         array.push(num);
       }
     }
+    return array;
+  };
+
+  const generateQuestionAndAnswerForREGGame = () => {
     // теперь берем массив и заменяем рандомное число в нем на '..'
-    const removeIndex = getRandom(0, array.length - 1);
-    const finalArr = [...array];
+    const funcResult = createProgression();
+    const removeIndex = getRandom(0, funcResult.length - 1);
+    const finalArr = [...funcResult];
     finalArr.splice(removeIndex, 1, '..');
     const question = finalArr.join(' ');
 
-    return [question, array[removeIndex].toString()];
+    return [question, funcResult[removeIndex].toString()];
   };
-  genBasicOfGames(purposeOfREGGame, taskForREGGame);
+  launchBasicOfGames(purposeOfREGGame, generateQuestionAndAnswerForREGGame);
 };
 export default getProgressionGame;
