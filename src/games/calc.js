@@ -1,5 +1,5 @@
-import { launchBasicOfGames } from '../index.js';
-import { getRandom } from '../utils.js';
+import launchBasicOfGames from '../index.js';
+import getRandom from '../utils.js';
 
 const calculate = (Number1, Number2, sign) => {
   let result = 0;
