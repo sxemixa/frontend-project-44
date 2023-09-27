@@ -1,5 +1,5 @@
-import { launchBasicOfGames } from '../index.js';
-import { getRandom } from '../utils.js';
+import launchBasicOfGames from '../index.js';
+import getRandom from '../utils.js';
 
 const getEvenGame = () => {
   const purposeOfEvenGame = 'Answer "yes" if the number is even, otherwise answer "no".';
