@@ -1,5 +1,5 @@
-import { launchBasicOfGames } from '../index.js';
-import { getRandom } from '../utils.js';
+import launchBasicOfGames from '../index.js';
+import getRandom from '../utils.js';
 
 const getPrimeGame = () => {
   const purposeOfPrimeGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';

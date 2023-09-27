@@ -1,5 +1,5 @@
-import { launchBasicOfGames } from '../index.js';
-import { getRandom } from '../utils.js';
+import launchBasicOfGames from '../index.js';
+import getRandom from '../utils.js';
 
 const getProgressionGame = () => {
   const purposeOfREGGame = 'What number is missing in the progression?';

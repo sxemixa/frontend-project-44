@@ -1,5 +1,5 @@
-import { launchBasicOfGames } from '../index.js';
-import { getRandom } from '../utils.js';
+import launchBasicOfGames from '../index.js';
+import getRandom from '../utils.js';
 
 const getGcdGame = () => {
   const purposeOfGCDGame = 'Find the greatest common divisor of given numbers.';
