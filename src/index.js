@@ -17,9 +17,8 @@ export const launchBasicOfGames = (purposeOfGame, task) => {
     if (userAnswer === rightAnswer) {
       console.log('Correct!');
     } else {
-      return console.log(`'${userAnswer}' is wrong answer ;(. 
-        Correct answer was '${rightAnswer}'. \nLet's try again, 
-        ${name}!`);
+      return console.log(`'${userAnswer}' is wrong answer ;(. \
+Correct answer was '${rightAnswer}'. \nLet's try again, ${name}!`);
     }
   }
   return console.log(`Congratulations, ${name}!`);
