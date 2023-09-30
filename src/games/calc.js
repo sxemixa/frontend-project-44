@@ -1,33 +1,32 @@
 import launchBasicOfGames from '../index.js';
-import getRandom from '../utils.js';
+import getRandomNumber from '../utils.js';
 
-const calculate = (Number1, Number2, sign) => {
+const calculate = (number1, number2, sign) => {
   let result = 0;
   switch (sign) {
     case '+':
-      result = Number1 + Number2;
-      break;
+      result = number1 + number2;
+      return result;
     case '-':
-      result = Number1 - Number2;
-      break;
+      result = number1 - number2;
+      return result;
     case '*':
-      result = Number1 * Number2;
-      break;
+      result = number1 * number2;
+      return result;
     case '/':
-      result = Number1 / Number2;
-      break;
+      result = number1 / number2;
+      return result;
     default:
-      break;
+      throw new Error(`Неизвестный знак: '${sign}'!`);
   }
-  return result;
 };
 const purposeOfCalcGame = 'What is the result of the expression?';
 const getCalcGame = () => {
   const generateQuestionAndAnswerForCalcGame = () => {
-    const randomNumber1 = getRandom();
-    const randomNumber2 = getRandom();
+    const randomNumber1 = getRandomNumber();
+    const randomNumber2 = getRandomNumber();
     const signs = ['+', '-', '*'];
-    const randomSign = signs[getRandom(0, 2)];
+    const randomSign = signs[getRandomNumber(0, 2)];
     const question = `${randomNumber1} ${randomSign} ${randomNumber2}`;
     return [question, (calculate(randomNumber1, randomNumber2, randomSign).toString())];
   };

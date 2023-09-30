@@ -1,19 +1,19 @@
 import readlineSync from 'readline-sync';
 
-const launchBasicOfGames = (purposeOfGame, task) => {
+const launchBasicOfGames = (purposeOfGame, generateGamesTask) => {
   console.log('Welcome to the Brain Games!');
   const name = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${name}!`);
   console.log(purposeOfGame);
   // задаем число итераций повторения запуска кода
-  const countofiterations = 3;
+  const roundsCount = 3;
 
-  for (let i = 0; i < countofiterations; i += 1) {
-    const questionAndResult = task();
+  for (let i = 0; i < roundsCount; i += 1) {
+    const [question, result] = generateGamesTask();
 
-    console.log(`Question: ${questionAndResult[0]}`);
+    console.log(`Question: ${question}`);
     const userAnswer = readlineSync.question('Your answer: ');
-    const rightAnswer = questionAndResult[1];
+    const rightAnswer = result;
     if (userAnswer === rightAnswer) {
       console.log('Correct!');
     } else {

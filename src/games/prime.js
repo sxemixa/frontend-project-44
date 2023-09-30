@@ -1,28 +1,25 @@
 import launchBasicOfGames from '../index.js';
-import getRandom from '../utils.js';
+import getRandomNumber from '../utils.js';
 
 const getPrimeGame = () => {
   const purposeOfPrimeGame = 'Answer "yes" if given number is prime. Otherwise answer "no".';
   const calculatePrime = (number) => {
     let divider = 1;
-    let result = '';
     for (let num = 1; num < number; num += 1) {
       if (number % num === 0) {
         divider += 1;
       }
     }
     if (divider === 2) {
-      result = 'yes';
-    } else {
-      result = 'no';
-    }
-    return result;
+      return true;
+    } return false;
   };
 
   const generateQuestionAndAnswerForPrimeGame = () => {
-    const randomNumber = getRandom();
+    const randomNumber = getRandomNumber();
     const question = randomNumber;
-    return [question, calculatePrime(randomNumber)];
+    const answer = calculatePrime(randomNumber) ? 'yes' : 'no';
+    return [question, answer];
   };
   launchBasicOfGames(purposeOfPrimeGame, generateQuestionAndAnswerForPrimeGame);
 };

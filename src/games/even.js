@@ -1,16 +1,15 @@
 import launchBasicOfGames from '../index.js';
-import getRandom from '../utils.js';
+import getRandomNumber from '../utils.js';
+
+const isEvenNumber = (num) => num % 2 === 0;
 
 const getEvenGame = () => {
   const purposeOfEvenGame = 'Answer "yes" if the number is even, otherwise answer "no".';
 
   const generateQuestionAndAnswerForEvenGame = () => {
-    const randomNumber = getRandom();
-
-    const isEven = (num) => num % 2 === 0;
-
+    const randomNumber = getRandomNumber();
     const question = randomNumber;
-    const result = isEven(randomNumber) ? 'yes' : 'no';
+    const result = isEvenNumber(randomNumber) ? 'yes' : 'no';
 
     return [question, result];
   };

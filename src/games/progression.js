@@ -1,20 +1,12 @@
 import launchBasicOfGames from '../index.js';
-import getRandom from '../utils.js';
+import getRandomNumber from '../utils.js';
 
 const getProgressionGame = () => {
   const purposeOfREGGame = 'What number is missing in the progression?';
-  const createProgression = () => {
-    const arrayLength = getRandom(5, 10);
+  const createProgression = (length, step, number) => {
     const array = [];
-    // создаем стартовую точку и число на которое
-    // оно будет увеличиваться
-    const firstNumber = getRandom();
-    const increase = getRandom();
-    // формируем массив размером от 5, до 10
-    for (let index = 0; index < arrayLength; index += 1) {
-      // пушим в массив числа, начиная с firstNumber и увеличивая
-      // следующее число на insrease
-      for (let num = firstNumber; array.length < arrayLength; num += increase) {
+    for (let index = 0; index < length; index += 1) {
+      for (let num = number; array.length < length; num += step) {
         array.push(num);
       }
     }
@@ -22,9 +14,11 @@ const getProgressionGame = () => {
   };
 
   const generateQuestionAndAnswerForREGGame = () => {
-    // теперь берем массив и заменяем рандомное число в нем на '..'
-    const funcResult = createProgression();
-    const removeIndex = getRandom(0, funcResult.length - 1);
+    const arrayLength = getRandomNumber(5, 10);
+    const increase = getRandomNumber();
+    const firstNumber = getRandomNumber();
+    const funcResult = createProgression(arrayLength, increase, firstNumber);
+    const removeIndex = getRandomNumber(0, funcResult.length - 1);
     const finalArr = [...funcResult];
     finalArr.splice(removeIndex, 1, '..');
     const question = finalArr.join(' ');
